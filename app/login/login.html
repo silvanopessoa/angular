@@ -2,7 +2,7 @@
 <html lang="en" ng-app="login">
 <head>
     <meta charset="UTF-8">
-    <title>Palas Athena</title>
+    <title>Sistema Administrativo</title>
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../bower_components/adminlte/dist/css/AdminLTE.min.css" rel="stylesheet">
     <link href="../bower_components/iCheck/skins/square/blue.css" rel="stylesheet">
@@ -26,11 +26,11 @@
                     <b>Conta de Autenticação</b>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" ng-model="credencial.model.usuario" placeholder="{{model.place.login}}" ng-minlength="1" ng-maxlength="32" maxlength="32" required class="form-control">
+                    <input type="text" ng-model="model.credencial.usuario" placeholder="{{model.place.login}}" ng-minlength="1" ng-maxlength="32" maxlength="32" required class="form-control">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" ng-model="credencial.model.senha" placeholder="{{model.place.senha}}" ng-minlength="1" ng-maxlength="32" maxlength="32" required class="form-control">
+                    <input type="password" ng-model="model.credencial.senha" placeholder="{{model.place.senha}}" ng-minlength="1" ng-maxlength="32" maxlength="32" required class="form-control">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">
@@ -50,7 +50,9 @@
         </div>
     </div>
 </div>
-
+<p>
+    {{model}}
+</p>
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../bower_components/angular/angular.min.js"></script>
@@ -58,7 +60,8 @@
 <script src="../bower_components/iCheck/icheck.min.js"></script>
 <!--https://github.com/lorenzofox3/lr-notifier-->
 <script src="../bower_components/lr-notifier/lrNotifier.min.js"></script>
-<script src="login.js"></script>
+<script src="credencialFactory.js"></script>
+<script src="loginController.js"></script>
 
 <script>
     $(function () {
