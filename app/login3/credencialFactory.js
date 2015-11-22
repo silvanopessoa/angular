@@ -1,11 +1,9 @@
 /**
  * Created by Silvano on 18/11/2015.
  */
-//http://viralpatel.net/blogs/angularjs-service-factory-tutorial/
-//https://www.youtube.com/watch?v=0ybzZ3zZus0
-var login = angular.module('login',['lrNotifier','ngAnimate']);
-login.factory('Credencial',function(){
-
+var app = angular.module('login',['lrNotifier','ngAnimate'])
+    .factory('Credencial',function(){
+        console.log("Criou o objeto Factory");
         //init presentation model
         var Credencial= function() {
 
