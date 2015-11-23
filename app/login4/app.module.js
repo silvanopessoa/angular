@@ -1,1 +1,1 @@
-var app = angular.module('app', ['lrNotifier','ngAnimate']);
+var app = angular.module('app', []);

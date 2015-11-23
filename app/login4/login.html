@@ -15,11 +15,6 @@
             <img src="../img/login/login.png" width="128" height="128"/>
         </div>
         <div class="login-box-body">
-            <div lr-notification-stack-container="channelName">
-                <div ng-class="notification.level" ng-repeat="notification in lrNotifierCtrl.notifications" ng-click="lrNotifierCtrl.removeNotification(notification)">
-                        {{notification.message}}
-                </div>
-            </div>
             <p class="login-box-msg">Sistema Administrativo</p>
             <form>
                 <div class="form-group">
@@ -64,7 +59,6 @@
 <script src="../bower_components/iCheck/icheck.min.js"></script>
 <script src="app.module.js"></script>
 <!--https://github.com/lorenzofox3/lr-notifier-->
-<script src="../bower_components/lr-notifier/lrNotifier.min.js"></script>
 <script src="credencialFactory.js"></script>
 <script src="loginConstant.js"></script>
 <script src="loginService.js"></script>
