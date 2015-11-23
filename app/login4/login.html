@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Administrativo</title>
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/adminlte/dist/css/AdminLTE.min.css" rel="stylesheet">
+    <link href="../bower_components/iCheck/skins/square/blue.css" rel="stylesheet">
+    <link href="login.css" rel="stylesheet">
+</head>
+<body ng-controller="LoginController as model" class="login-page">
+<div class="login-box">
+    <div class="login-box">
+        <div class="login-logo">
+            <img src="../img/login/login.png" width="128" height="128"/>
+        </div>
+        <div class="login-box-body">
+            <div lr-notification-stack-container="channelName">
+                <div ng-class="notification.level" ng-repeat="notification in lrNotifierCtrl.notifications" ng-click="lrNotifierCtrl.removeNotification(notification)">
+                        {{notification.message}}
+                </div>
+            </div>
+            <p class="login-box-msg">Sistema Administrativo</p>
+            <form>
+                <div class="form-group">
+                    <b>Conta de Autenticação</b>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" ng-model="model.credencial.usuario" placeholder="{{place.usuario}}" ng-minlength="1" ng-maxlength="32" maxlength="32" required class="form-control">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" ng-model="model.credencial.senha" placeholder="{{place.senha}}" ng-minlength="1" ng-maxlength="32" maxlength="32" required class="form-control">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox"> Manter conectado
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat" ng-click="model.logar()">Entrar</button>
+                    </div>
+                </div>
+                <a href="register.html" class="text-center">Não consegue acessar a conta?</a>
+            </form>
+        </div>
+    </div>
+</div>
+<!--<p>-->
+    <!--{{model}}-->
+<!--</p>-->
+<p>
+
+    {{loginConstant.usuario}}
+</p>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/iCheck/icheck.min.js"></script>
+<script src="app.module.js"></script>
+<!--https://github.com/lorenzofox3/lr-notifier-->
+<script src="../bower_components/lr-notifier/lrNotifier.min.js"></script>
+<script src="credencialFactory.js"></script>
+<script src="loginConstant.js"></script>
+<script src="loginService.js"></script>
+<script src="loginController.js"></script>
+
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>
+
+</body>
+</html>
