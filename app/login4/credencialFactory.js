@@ -1,8 +1,7 @@
 /**
  * Created by Silvano on 18/11/2015.
  */
-app.module('login',['lrNotifier','ngAnimate'])
-    .factory('Credencial',function(){
+app.factory('Credencial',function(){
         console.log("Criou o objeto Factory");
         //init presentation model
         var Credencial= function() {
