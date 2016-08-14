@@ -7,14 +7,16 @@ var app = angular
         $scope.$route=$route;
         $scope.$location=$location;
         $scope.$routeParams=$routeParams;
+        console.log('ENTROU AQUIIIIIIIIIIIII 1');
     })
-    .config(function($routeProvider,$locationProvider){
+    .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
         $routeProvider
             .when('/home',{
-                templateUrl:'../menu2/home.html',
+                templateUrl:'/app/menu2/home2.html',
                 controller:'homeController'
             }).otherwise({
             redirect:'/'
         });
-        $locationProvider.html5Mode(true);
-    });
+        $locationProvider.hashPrefix('!');
+        //$locationProvider.html5Mode(true);
+    }]);
